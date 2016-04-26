@@ -15,14 +15,14 @@ RESET_START
 	NOP             ;
 	NOP             ;
 	NOP             ;
-	LDA #$7f        ;
+	LDA #$7f        ; inhibits VIA IRQ
 	STA $030E       ;
 	LDA #$00        ;
 	STA $03FA       ;
 	LDY #$20        ;
 	DEY             ;
 	BEQ $FD2F
-	LDA $FD50,Y     ;
+	LDA $FD50,Y     ; 
 	STA $0400,Y     ;
 	LDA $0400,Y     ;
 	CMP $FD50,Y     ;
